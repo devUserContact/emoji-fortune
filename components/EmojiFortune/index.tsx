@@ -34,7 +34,7 @@ const EmojiFortune = () => {
       return randSet;
     }
 
-    randSet.forEach((randNum: number) => {
+    randSet.forEach((randNum: any) => {
       let emojiObject = {
         pictogram: emojiArray[randNum].pictogram,
         description: emojiArray[randNum].CLDR,
