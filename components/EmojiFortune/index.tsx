@@ -34,12 +34,12 @@ const EmojiFortune = () => {
       return randSet;
     }
 
-    randSet.forEach((key: number) => {
+    randSet.forEach((randNum: number) => {
       let emojiObject = {
-        pictogram: emojiArray[key].pictogram,
-        description: emojiArray[key].CLDR,
-        unicode: emojiArray[key].unicode,
-        'UTF-8': emojiArray[key]['UTF-8'],
+        pictogram: emojiArray[randNum].pictogram,
+        description: emojiArray[randNum].CLDR,
+        unicode: emojiArray[randNum].unicode,
+        'UTF-8': emojiArray[randNum]['UTF-8'],
       };
       fortuneArray.push(emojiObject);
     });
