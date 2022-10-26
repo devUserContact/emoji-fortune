@@ -31,12 +31,12 @@ $screen-xl-min: 1200px;
 }
 .textContainer {
 	margin: auto;
-	margin-top: 35rem;
+	margin-top: 25rem;
 }
 .paragraphText {
 	display: inline-block;
-	margin: 5rem;
-  font-size: 35rem;
+	margin: 0.5rem;
+  font-size: 5rem;
 }
 
 @include sm {
@@ -49,4 +49,12 @@ $screen-xl-min: 1200px;
 }
 
 @include xl {
+.textContainer {
+	margin-top: 35rem;
+}
+.paragraphText {
+	display: inline-block;
+	margin: 5rem;
+  font-size: 35rem;
+}
 }
