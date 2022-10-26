@@ -9488,7 +9488,7 @@
 	},
 	{
 		"category": "flags",
-		"checked": true,
+		"checked": false,
 		"catalog": [
 			{
 				"pictogram": "🏳️",

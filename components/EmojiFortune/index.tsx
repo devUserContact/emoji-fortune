@@ -1,45 +1,63 @@
-import React from "react";
-import { useEffect } from "react";
-import { emoji } from "../../assets/emoji.json";
-import styles from "../../styles/Main.module.scss";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { emoji } from '../../assets/emoji.json';
+import styles from '../../styles/Main.module.scss';
 
 const EmojiFortune = () => {
+  const [fortune, setFortune] = useState([{}]);
+  useEffect(() => {
+    let emojiArray: {
+      pictogram: string;
+      CLDR: string;
+      unicode: string;
+      'UTF-8': string;
+    }[] = [];
+    let fortuneArray: {
+      pictogram: any;
+      description: any;
+      unicode: any;
+      'UTF-8': any;
+    }[] = [];
+    const randSet = new Set();
+    emoji.map((emoji) => {
+      if (emoji.checked === true) {
+        emojiArray.push(...emoji.catalog);
+      }
+    });
 
-	let emojiArray = [];
-	let fortuneDraw = [];
-	let fortuneArray = [];
-	const randSet = new Set();
-	useEffect(() => {
-	}, [])
+    randomGen(5, emojiArray.length);
 
-	emoji.map((emoji) => {
-		if (emoji.checked === true) {
-			emojiArray.push(...emoji.catalog);
-		}
-	});
-	
-	randomGen(3, emojiArray.length);
-	function randomGen(quantity, max) {
-		while (randSet.size < quantity) {
-			randSet.add(Math.floor(Math.random() * max) + 1);
-		}
-		return randSet;
-	}
+    function randomGen(quantity: number, max: number) {
+      while (randSet.size < quantity) {
+        randSet.add(Math.floor(Math.random() * max) + 1);
+      }
+      return randSet;
+    }
 
-	randSet.forEach((key) => {
-		let emojiObject = {
-			pictogram: emojiArray[key].pictogram,
-			unicode: emojiArray[key].unicode,
-		}
-		fortuneArray.push(emojiObject);
-	});
-
-	return (
-		<div className={styles.textContainer}>
-			<p className={styles.paragraphText}>{
-			}</p>
-		</div>
-	);
+    randSet.forEach((key: number) => {
+      let emojiObject = {
+        pictogram: emojiArray[key].pictogram,
+        description: emojiArray[key].CLDR,
+        unicode: emojiArray[key].unicode,
+        'UTF-8': emojiArray[key]['UTF-8'],
+      };
+      fortuneArray.push(emojiObject);
+    });
+    setFortune(fortuneArray);
+  }, []);
+  return (
+    <div className={styles.textContainer}>
+        {fortune.map((pic: any, id: number) => {
+        return (
+        	<>
+      			<p className={styles.paragraphText}>
+          		{pic.pictogram}
+      			</p>
+        	</>
+        )
+        })}
+    </div>
+  );
 };
 
 export default EmojiFortune;
