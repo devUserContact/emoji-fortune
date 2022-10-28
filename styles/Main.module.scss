@@ -4,39 +4,54 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1200px;
 
 @mixin sm {
-  @media (min-width: #{$screen-sm-min}) {
-    @content;
-  }
+	@media (min-width: #{$screen-sm-min}) {
+		@content;
+	}
 }
 @mixin md {
-  @media (min-width: #{$screen-md-min}) {
-    @content;
-  }
+	@media (min-width: #{$screen-md-min}) {
+		@content;
+	}
 }
 @mixin lg {
-  @media (min-width: #{$screen-lg-min}) {
-    @content;
-  }
+	@media (min-width: #{$screen-lg-min}) {
+		@content;
+	}
 }
 @mixin xl {
-  @media (min-width: #{$screen-xl-min}) {
-    @content;
-  }
+	@media (min-width: #{$screen-xl-min}) {
+		@content;
+	}
 }
 
 .mainContainer {
-  display: grid;
-  align-items: center;
-  justify-content: center;
+	display: grid;
+	align-items: center;
+	justify-content: center;
 }
 .textContainer {
 	margin: auto;
 	margin-top: 25rem;
 }
-.paragraphText {
-	display: inline-block;
-	margin: 0.5rem;
-  font-size: 5rem;
+.emojiContainer {
+	display: grid;
+	float: inline-start;
+	text-align: center;
+	width: min-content;
+}
+.pictogramText {
+	margin: 3rem;
+	font-size: 5rem;
+	margin-bottom: 0rem;
+}
+.descriptionContainer {
+	justify-content: center;
+	text-align: left;
+}
+.descriptionText {
+	text-align: center;
+	margin: auto;
+	line-break: strict;
 }
 
 @include sm {
@@ -49,12 +64,13 @@ $screen-xl-min: 1200px;
 }
 
 @include xl {
-.textContainer {
-	margin-top: 35rem;
-}
-.paragraphText {
-	display: inline-block;
-	margin: 5rem;
-  font-size: 35rem;
-}
+	.textContainer {
+		margin-top: 25rem;
+	}
+	.pictogramText {
+		font-size: 22rem;
+	}
+	.descriptionText {
+		font-size: 4rem;
+	}
 }
