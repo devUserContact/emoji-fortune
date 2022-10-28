@@ -47,10 +47,16 @@ const EmojiFortune = () => {
 		});
 		setFortune(fortuneArray);
 	}, []);
+	let refresh = () => {
+		window.location.reload();
+	};
 	return (
 		<>
+			<button className={styles.bttn} type="button" onClick={refresh}>
+				reveal fortune
+			</button>
 			<div className={styles.textContainer}>
-				{fortune.map((emojiItem: any) => {
+							{fortune.map((emojiItem: any) => {
 					return <EmojiDisplay emojiItem={emojiItem} />;
 				})}
 			</div>

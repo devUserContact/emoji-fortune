@@ -49,17 +49,37 @@ $screen-xl-min: 1200px;
 .descriptionText {
 	line-break: strict;
 }
+.bttn {
+	display: grid;
+	width: 45%;
+	margin: auto;
+	margin-top: 10rem;
+	text-align: center;
+	font-size: 4rem;
+	border-radius: 2rem;
+	border: 2px solid black;
+}
 
 @include sm {
+	.textContainer {
+		margin-top: 4rem;
+	}
 	.pictogramText {
 		font-size: 7.5rem;
 	}
 	.descriptionText {
 		font-size: 2rem;
 	}
+	.bttn {
+		margin-top: 6rem;
+		font-size: 2.8rem;
+	}
 }
 
 @include md {
+	.textContainer {
+		margin-top: 6rem;
+	}
 	.pictogramText {
 		margin: 1.8rem;
 		font-size: 10rem;
@@ -67,11 +87,15 @@ $screen-xl-min: 1200px;
 	.descriptionText {
 		font-size: 2.6rem;
 	}
+	.bttn {
+		margin-top: 10rem;
+		font-size: 4rem;
+	}
 }
 
 @include lg {
 	.textContainer {
-		margin-top: 20rem;
+		margin-top: 8rem;
 	}
 	.pictogramText {
 		margin: 3rem;
@@ -84,7 +108,7 @@ $screen-xl-min: 1200px;
 
 @include xl {
 	.textContainer {
-		margin-top: 25rem;
+		margin-top: 10rem;
 	}
 	.pictogramText {
 		font-size: 17.5rem;
