@@ -26,12 +26,10 @@ $screen-xl-min: 1200px;
 
 .mainContainer {
 	display: grid;
-	align-items: center;
 	justify-content: center;
 }
 .textContainer {
-	margin: auto;
-	margin-top: 25rem;
+	margin-top: 15rem;
 }
 .emojiContainer {
 	display: grid;
@@ -40,27 +38,48 @@ $screen-xl-min: 1200px;
 	width: min-content;
 }
 .pictogramText {
-	margin: 3rem;
+	margin: 1.4rem;
 	font-size: 5rem;
 	margin-bottom: 0rem;
 }
 .descriptionContainer {
-	justify-content: center;
-	text-align: left;
+	margin: auto;
+	text-align: center;
 }
 .descriptionText {
-	text-align: center;
-	margin: auto;
 	line-break: strict;
 }
 
 @include sm {
+	.pictogramText {
+		font-size: 7.5rem;
+	}
+	.descriptionText {
+		font-size: 2rem;
+	}
 }
 
 @include md {
+	.pictogramText {
+		margin: 1.8rem;
+		font-size: 10rem;
+	}
+	.descriptionText {
+		font-size: 2.6rem;
+	}
 }
 
 @include lg {
+	.textContainer {
+		margin-top: 20rem;
+	}
+	.pictogramText {
+		margin: 3rem;
+		font-size: 12.5rem;
+	}
+	.descriptionText {
+		font-size: 3.5rem;
+	}
 }
 
 @include xl {
@@ -68,7 +87,7 @@ $screen-xl-min: 1200px;
 		margin-top: 25rem;
 	}
 	.pictogramText {
-		font-size: 22rem;
+		font-size: 17.5rem;
 	}
 	.descriptionText {
 		font-size: 4rem;
