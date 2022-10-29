@@ -30,6 +30,9 @@ $screen-xl-min: 1200px;
 }
 .textContainer {
 	margin-top: 8rem;
+	animation: fadeInAnimation ease 9s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }
 .emojiContainer {
 	display: grid;
@@ -51,15 +54,23 @@ $screen-xl-min: 1200px;
 }
 .bttn {
 	display: grid;
-	width: 70%;
 	margin: auto;
 	margin-top: 10rem;
+	padding: 1rem;
+	white-space: nowrap;
 	text-align: center;
 	font-size: 3rem;
 	border-radius: 2rem;
 	border: 2px solid black;
 }
-
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 @include sm {
 	.textContainer {
 		margin-top: 4rem;
