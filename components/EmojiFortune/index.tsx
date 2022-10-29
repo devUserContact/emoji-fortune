@@ -7,7 +7,7 @@ import styles from "../../styles/Main.module.scss";
 const EmojiFortune = () => {
 	const [fortune, setFortune] = useState([{}]);
 	const [isShown, setIsShown] = useState(false);
-	useEffect(() => {
+	const generateFortune = () => {
 		let emojiArray: {
 			pictogram: string;
 			CLDR: string;
@@ -46,9 +46,13 @@ const EmojiFortune = () => {
 			fortuneArray.push(emojiObject);
 		});
 		setFortune(fortuneArray);
+	};
+	useEffect(() => {
+		generateFortune();
 	}, []);
 	let refresh = () => {
-		window.location.reload();
+		setFortune([]);
+		generateFortune();
 	};
 	return (
 		<>
@@ -56,7 +60,7 @@ const EmojiFortune = () => {
 				reveal fortune
 			</button>
 			<div className={styles.textContainer}>
-							{fortune.map((emojiItem: any) => {
+				{fortune.map((emojiItem: any) => {
 					return <EmojiDisplay emojiItem={emojiItem} />;
 				})}
 			</div>
