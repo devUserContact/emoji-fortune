@@ -61,7 +61,7 @@ const EmojiFortune = () => {
 			</button>
 			<div className={styles.textContainer}>
 				{fortune.map((emojiItem: any, key: number) => {
-					return <EmojiDisplay emojiItem={emojiItem} />;
+					return <EmojiDisplay key={key} emojiItem={emojiItem} />;
 				})}
 			</div>
 		</>
