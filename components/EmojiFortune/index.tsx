@@ -2,10 +2,14 @@ import React from "react";
 import { useState } from "react";
 import EmojiDisplay from "../EmojiDisplay";
 import { emoji } from "../../assets/emoji.json";
+import CopyIcon from "../../assets/CopyIcon.svg";
+import copy from "copy-to-clipboard";
 import styles from "../../styles/Main.module.scss";
 
 const EmojiFortune = () => {
+	const copyIcon = CopyIcon;
 	const [fortune, setFortune] = useState([{}]);
+	const [fortuneString, setFortuneString] = useState("");
 	let emojiArray: {
 		pictogram: string;
 		CLDR: string;
@@ -36,11 +40,20 @@ const EmojiFortune = () => {
 			fortuneArray.push(emojiObject);
 		});
 		setFortune(fortuneArray);
+		let fortuneString: string = "";
+		fortuneArray.map((fortuneItem: string) => {
+			fortuneString += `${String(fortuneItem.pictogram) + " "}`;
+		});
+		setFortuneString(fortuneString);
 		randSet.clear();
-		fortuneArray = [];
+		return fortuneString;
 	};
 	const revealFortune = () => {
 		generateFortune();
+	};
+	const copyFortune = () => {
+		copy(fortuneString);
+		alert("emoji fortune copied");
 	};
 	function randomGen(quantity: number, max: number) {
 		while (randSet.size < quantity) {
@@ -50,13 +63,28 @@ const EmojiFortune = () => {
 	}
 	return (
 		<>
-			<button className={styles.bttn} type="button" onClick={revealFortune}>
+			<button
+				className={styles.fortuneButton}
+				type="button"
+				onClick={revealFortune}
+			>
 				reveal fortune
 			</button>
-			<div className={styles.textContainer}>
-				{fortune.map((emojiItem: any, key: number) => {
-					return <EmojiDisplay key={key} emojiItem={emojiItem} />;
-				})}
+			<div className={styles.containerFlex}>
+				<div className={styles.spacerFlex}></div>
+				<div className={styles.emojiFlex}>
+					{fortune.map((emojiItem: any, key: number) => {
+						return <EmojiDisplay key={key} emojiItem={emojiItem} />;
+					})}
+				</div>
+				<div className={styles.cpFlex}>
+					<input
+						className={styles.cpButton}
+						type="image"
+						src={copyIcon}
+						onClick={copyFortune}
+					/>
+				</div>
 			</div>
 		</>
 	);

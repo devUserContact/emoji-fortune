@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="210.99998mm"
+   viewBox="0 0 210 210.99998"
+   version="1.1"
+   id="svg5"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1119">
+      <stop
+         style="stop-color:#292929;stop-opacity:1;"
+         offset="0"
+         id="stop1117" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1113">
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="0"
+         id="stop1111" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient1113"
+       id="linearGradient1115"
+       x1="8.6757574"
+       y1="91.095413"
+       x2="172.35831"
+       y2="91.095413"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.88856306,0,0,0.88856306,39.150716,40.082748)" />
+    <linearGradient
+       xlink:href="#linearGradient1119"
+       id="linearGradient1121"
+       x1="8.6757574"
+       y1="91.095413"
+       x2="172.35831"
+       y2="91.095413"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.88856306,0,0,0.88856306,39.150716,40.082748)" />
+  </defs>
+  <g
+     id="layer1">
+    <rect
+       style="fill:url(#linearGradient1115);fill-opacity:1;stroke:url(#linearGradient1121);stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       id="rect163"
+       width="145.44228"
+       height="145.44228"
+       x="46.859669"
+       y="48.305626" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#292929;stroke-width:7.95499;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 19.954235,21.644497 V 166.61938"
+       id="path3464" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#292929;stroke-width:7.95499;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 165.31801,20.821807 H 20.343135"
+       id="path3464-6" />
+  </g>
+</svg>
