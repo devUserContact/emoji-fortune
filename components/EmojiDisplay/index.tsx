@@ -3,10 +3,10 @@ import { useState, useCallback } from "react";
 import styles from "../../styles/Main.module.scss";
 
 const EmojiDisplay = ({ emojiItem }: any) => {
-	const [isShown, setIsShown] = useState(false);
+	const [isVisible, setIsVisible] = useState(false);
 
 	const showDescription = useCallback(() => {
-		setIsShown((prevValue) => !prevValue);
+		setIsVisible((prevValue) => !prevValue);
 	}, []);
 
 	return (
@@ -16,11 +16,9 @@ const EmojiDisplay = ({ emojiItem }: any) => {
 			onMouseLeave={showDescription}
 		>
 			<p className={styles.pictogramText}>{emojiItem.pictogram}</p>
-			{isShown && (
-				<div className={styles.descriptionContainer}>
-					<p className={styles.descriptionText}>{emojiItem.description}</p>
-				</div>
-			)}
+			<div className={styles.descriptionContainer} style={{visibility: isVisible ? 'visible': 'hidden'}}>
+				<p className={styles.descriptionText}>{emojiItem.description}</p>
+			</div>
 		</div>
 	);
 };

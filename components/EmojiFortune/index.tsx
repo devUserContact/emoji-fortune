@@ -25,7 +25,7 @@ const EmojiFortune = () => {
 		}
 	});
 	const generateFortune = () => {
-		randomGen(5, emojiArray.length);
+		randomGen(3, emojiArray.length);
 		randSet.forEach((randNum: any) => {
 			let emojiObject = {
 				pictogram: emojiArray[randNum].pictogram,
