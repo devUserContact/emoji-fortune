@@ -28,32 +28,28 @@ $screen-xl-min: 1200px;
 	display: grid;
 	justify-content: center;
 }
-.containerFlex{
+.containerFlex {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	animation: fadeInAnimation ease 5s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
 }
-.cpFlex{
+.cpFlex {
 	display: flex;
 	width: 1%;
 	align-items: center;
-
 }
-.cpButton{
-	padding: 1rem;
+.cpButton {
+	padding: 0.5rem;
 	white-space: nowrap;
 	text-align: center;
 	font-size: 3rem;
 	border-radius: 1rem;
 	border: 2px solid black;
 }
-.spacerFlex{
+.spacerFlex {
 	width: 1%;
 }
-.emojiFlex{
+.emojiFlex {
 	margin-top: 8rem;
 }
 .emojiContainer {
@@ -61,6 +57,9 @@ $screen-xl-min: 1200px;
 	float: inline-start;
 	text-align: center;
 	width: min-content;
+	animation: fadeInAnimation ease 5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }
 .pictogramText {
 	margin: 1.4rem;
@@ -111,6 +110,9 @@ $screen-xl-min: 1200px;
 	.fortuneButton {
 		margin-top: 6rem;
 		font-size: 2.8rem;
+	}
+	.cpButton {
+		padding: 1rem;
 	}
 }
 
