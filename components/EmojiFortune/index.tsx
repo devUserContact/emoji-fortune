@@ -43,7 +43,7 @@ const EmojiFortune = () => {
 		});
 		setFortune(fortuneArray);
 		let fortuneString: string = "";
-		fortuneArray.map((fortuneItem: string) => {
+		fortuneArray.map((fortuneItem: any) => {
 			fortuneString += `${String(fortuneItem.pictogram) + " "}`;
 		});
 		setFortuneString(fortuneString);
