@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
 import EmojiDisplay from "../EmojiDisplay";
 import { emoji } from "../../assets/emoji.json";
@@ -11,6 +11,7 @@ const EmojiFortune = () => {
 	const copyIcon = CopyIcon;
 	const [fortune, setFortune] = useState([{}]);
 	const [fortuneString, setFortuneString] = useState("");
+	const [isHidden, setIsHidden] = useState(false);
 	let emojiArray: {
 		pictogram: string;
 		CLDR: string;
@@ -47,8 +48,12 @@ const EmojiFortune = () => {
 		});
 		setFortuneString(fortuneString);
 		randSet.clear();
+		setIsHidden(true);
 		return fortuneString;
 	};
+	const showButton = useCallback(() => {
+		setIsHidden((prevValue) => !prevValue);
+	}, []);
 	const revealFortune = () => {
 		generateFortune();
 	};
@@ -78,17 +83,19 @@ const EmojiFortune = () => {
 						return <EmojiDisplay key={key} emojiItem={emojiItem} />;
 					})}
 				</div>
-				<div className={styles.cpFlex}>
-					<button
-						className={styles.cpButton}
-						type="button"
-						onClick={copyFortune}
-					>
-						<div className={styles.copyIcon}>
-							<Image src={copyIcon} />
-						</div>
-					</button>
-				</div>
+				{isHidden && (
+					<div className={styles.cpFlex}>
+						<button
+							className={styles.cpButton}
+							type="button"
+							onClick={copyFortune}
+						>
+							<div className={styles.copyIcon}>
+								<Image src={copyIcon} />
+							</div>
+						</button>
+					</div>
+				)}
 			</div>
 		</>
 	);
