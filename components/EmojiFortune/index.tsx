@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Image from "next/image";
 import EmojiDisplay from "../EmojiDisplay";
 import { emoji } from "../../assets/emoji.json";
 import CopyIcon from "../../assets/CopyIcon.svg";
@@ -78,12 +79,15 @@ const EmojiFortune = () => {
 					})}
 				</div>
 				<div className={styles.cpFlex}>
-					<input
+					<button
 						className={styles.cpButton}
-						type="image"
-						src={copyIcon}
+						type="button"
 						onClick={copyFortune}
-					/>
+					>
+						<div className={styles.copyIcon}>
+							<Image src={copyIcon} />
+						</div>
+					</button>
 				</div>
 			</div>
 		</>
