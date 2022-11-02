@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import EmojiFortune from '../components/EmojiFortune';
+import Footer from '../components/Footer';
 
 import styles from '../styles/Main.module.scss';
 
@@ -15,6 +16,9 @@ const Home: NextPage = () => {
 			<main>
     		<EmojiFortune />
 			</main>
+			<footer>
+				<Footer />
+			</footer>
     </div>
   );
 };

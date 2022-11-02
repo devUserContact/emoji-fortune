@@ -30,6 +30,7 @@ $screen-xl-min: 1200px;
 }
 .containerFlex {
 	display: flex;
+	width: 100vh;
 	flex-direction: row;
 	justify-content: space-between;
 }
@@ -38,6 +39,8 @@ $screen-xl-min: 1200px;
 	width: 1%;
 	margin-top: 2.5rem;
 	margin-bottom: auto;
+	margin-right: auto;
+	
 }
 .cpButton {
 	padding: 0.5rem;
@@ -49,6 +52,7 @@ $screen-xl-min: 1200px;
 }
 .spacerFlex {
 	width: 1%;
+	margin-right: auto;
 }
 .emojiFlex {
 	animation: fadeInAnimation ease 5s;
@@ -88,6 +92,15 @@ $screen-xl-min: 1200px;
 .copyIcon {
 	width: 3rem;
 	height: 3rem;
+}
+.containerFooter {
+	display: flex;
+}
+.footer {
+	position: absolute;
+	bottom: 2rem;
+	right: 10rem;
+	font-size: 2rem;
 }
 @keyframes fadeInAnimation {
 	0% {

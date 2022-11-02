@@ -2,9 +2,9 @@ import React from "react";
 import { useState, useCallback } from "react";
 import Image from "next/image";
 import EmojiDisplay from "../EmojiDisplay";
+import copy from "copy-to-clipboard";
 import { emoji } from "../../assets/emoji.json";
 import CopyIcon from "../../assets/CopyIcon.svg";
-import copy from "copy-to-clipboard";
 import styles from "../../styles/Main.module.scss";
 
 const EmojiFortune = () => {
